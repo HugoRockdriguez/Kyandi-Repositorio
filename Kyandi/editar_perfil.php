@@ -1,7 +1,21 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['usuario'])){
+		echo'<script>
+			alert("¡Inicia sesión para acceder!");
+			window.location="acceso.html";
+		</script>';
+		session_destroy();
+		die();
+	}else{
+		include("php/datos_usuario.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>キャンディー (Kyandī) :3</title>
+	<title>Editar mi perfil-(Kyandī)</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
@@ -38,42 +52,32 @@
 		</ul>
 	</nav>
 	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div>
-	
-		<!--Carrusel-->
-<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="background-color: #DADCFF">
-	  <ol class="carousel-indicators">
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-  </ol>
-	  <div class="carousel-inner" role="listbox">
-	    <div class="carousel-item active"> <a href="#"><img src="img/fanta.png" alt="First slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/poke.jpg" alt="Second slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/pocky.png" alt="Third slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-  </div>
-	  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-</div>
-	
+		
 	<!--Contenido principal de la pagina-->
 	<main class="offer">
-		<div class="row">
-			<div class="col-5">
-				<a href="galletas.html"><img src="img/galleta_icon(v2).png" alt="Galletas" width="250" height="250"></a>
-			</div>
-			<div class="col-5">
-				<a href="bebidas.html"><img src="img/soda-icon(v2).png" title="Portada" alt="Bebidas" width="250" height="250"></a>
-			</div>
-		</div>
 		
+		<form action="php/editar_perfil.php" method="post">
 		<div class="row">
-			<div class="col-5">
-				<a href="snacks.html"><img src="img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
+			<div class="col-5" style="display:block;">
+				<b style="font-size: 25px;"><br><?php
+					echo($nombre.' '. $primer_apellido.' '.$segundo_apellido
+						);?></b><br>
+				<img src="img/heart_cat.jpg" alt="Gato-Corazón" width="300" height="300" style="margin-left: 10px;">
+				<b style="font-size: 25px;">Teléfono:</b><input type="text" name="telefono" class="form-control" value="<?php echo($telefono);?>"/><br>
+				<b style="font-size: 25px;">Correo:</b><p style="font-size: 20px;"><?php echo($correo);?></p>
 			</div>
-			<div class="col-5">
-				<img src="img/ramen-icon(v2).png" alt="ramen" width="250" height="250">
+			
+			<div class="col-5" style="display:block; padding-left: 50px;">
+				<b style="font-size: 25px;"><br>Dirección de envío:</b><br><br>
+				<b style="font-size: 20px;">Estado:</b><input type="text" name="estado" class="form-control" value="<?php echo($estado);?>"/>
+				<b style="font-size: 20px;">Municipio:</b><input type="text" name="municipio" class="form-control" value="<?php echo($municipio);?>"/>
+				<b style="font-size: 20px;">Colonia:</b><input type="text" name="colonia" class="form-control" value="<?php echo($colonia);?>"/>
+				<b style="font-size: 20px;">Código Postal:</b><input type="text" name="codigo_postal" class="form-control" value="<?php echo($codigo_postal);?>"/>
+				<b style="font-size: 20px;">Calle y número:</b><input type="text" name="calle" class="form-control" value="<?php echo($calle);?>"/><br>
+				
+				<button type="submit" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Guardar cambios</button>
+				</form>
+				<a href="eliminar_perfil.php"><button type="button" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Eliminar cuenta</button></a>
 			</div>
 		</div>
 

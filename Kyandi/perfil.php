@@ -1,7 +1,21 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['usuario'])){
+		echo'<script>
+			alert("¡Inicia sesión para acceder!");
+			window.location="acceso.html";
+		</script>';
+		session_destroy();
+		die();
+	}else{
+		include("php/datos_usuario.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>キャンディー (Kyandī) :3</title>
+	<title>Mi perfil-(Kyandī)</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
@@ -23,7 +37,7 @@
 				<p>キャンディー<br>= Kyandī =</p>
 			</div>
 			<div class="col-4">
-				<a href="perfil.php"><img src="img/user.png" alt="Logo 2" class="float-right" style="padding-top: 22px;" title="Mi perfil"></a>
+				<a href="#"><img src="img/user.png" alt="Logo 2" class="float-right" style="padding-top: 22px;" title="Mi perfil"></a>
 			</div>
 		</div>
 	</div>
@@ -38,43 +52,33 @@
 		</ul>
 	</nav>
 	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div>
-	
-		<!--Carrusel-->
-<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="background-color: #DADCFF">
-	  <ol class="carousel-indicators">
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-  </ol>
-	  <div class="carousel-inner" role="listbox">
-	    <div class="carousel-item active"> <a href="#"><img src="img/fanta.png" alt="First slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/poke.jpg" alt="Second slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/pocky.png" alt="Third slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-  </div>
-	  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-</div>
-	
+		
 	<!--Contenido principal de la pagina-->
 	<main class="offer">
-		<div class="row">
-			<div class="col-5">
-				<a href="galletas.html"><img src="img/galleta_icon(v2).png" alt="Galletas" width="250" height="250"></a>
-			</div>
-			<div class="col-5">
-				<a href="bebidas.html"><img src="img/soda-icon(v2).png" title="Portada" alt="Bebidas" width="250" height="250"></a>
-			</div>
-		</div>
 		
 		<div class="row">
-			<div class="col-5">
-				<a href="snacks.html"><img src="img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
+			<div class="col-5" style="display:block;">
+				<b style="font-size: 25px;"><br><?php
+					echo($nombre.' '. $primer_apellido.' '.$segundo_apellido
+						);?></b><br>
+				<img src="img/heart_cat.jpg" alt="Gato-Corazón" width="300" height="300" style="margin-left: 10px;"><br><br>
+				<b style="font-size: 25px;">Correo:</b><p style="font-size: 20px;"><?php echo($correo);?></p>
+				<b style="font-size: 25px;">Teléfono:</b><p style="font-size: 20px;"><?php echo($telefono);?></p>
+				
 			</div>
-			<div class="col-5">
-				<img src="img/ramen-icon(v2).png" alt="ramen" width="250" height="250">
+			
+			<div class="col-5" style="display:block; padding-left: 50px;">
+				<b style="font-size: 25px;"><br>Dirección de envío:</b><br><br>
+				<b style="font-size: 20px;">Estado:</b><p><?php echo($estado);?></p>
+				<b style="font-size: 20px;">Municipio:</b><p><?php echo($municipio);?></p>
+				<b style="font-size: 20px;">Colonia:</b><p><?php echo($colonia);?></p>
+				<b style="font-size: 20px;">Código Postal:</b><p><?php echo($codigo_postal);?></p>
+				<b style="font-size: 20px;">Calle y número:</b><p><?php echo($calle);?></p><br><br>		
+				
+				<a href="editar_perfil.php"><button type="button" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Editar Datos</button></a>
+				<a href="php/cerrar_sesion.php"><button type="button" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Cerrar Sesión</button></a>
 			</div>
+
 		</div>
 
 	</main>

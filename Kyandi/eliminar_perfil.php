@@ -1,11 +1,26 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['usuario'])){
+		echo'<script>
+			alert("¡Inicia sesión para acceder!");
+			window.location="acceso.html";
+		</script>';
+		session_destroy();
+		die();
+	}else{
+		include("php/datos_usuario.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>キャンディー (Kyandī) :3</title>
+	<title>Eliminar mi cuenta-(Kyandī)</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
 	<meta name="robot" content="index,follow"/>
+	<link rel="icon" type="image/png" href="img/logo1.png"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -37,46 +52,39 @@
 			<li><a href="#">Ofertas</a></li>
 		</ul>
 	</nav>
-	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div>
-	
-		<!--Carrusel-->
-<div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="background-color: #DADCFF">
-	  <ol class="carousel-indicators">
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-	    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-  </ol>
-	  <div class="carousel-inner" role="listbox">
-	    <div class="carousel-item active"> <a href="#"><img src="img/fanta.png" alt="First slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/poke.jpg" alt="Second slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/pocky.png" alt="Third slide" width="700" height="300" class="d-block mx-auto"></a>
-        </div>
-  </div>
-	  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
-</div>
-	
-	<!--Contenido principal de la pagina-->
-	<main class="offer">
-		<div class="row">
-			<div class="col-5">
-				<a href="galletas.html"><img src="img/galleta_icon(v2).png" alt="Galletas" width="250" height="250"></a>
-			</div>
-			<div class="col-5">
-				<a href="bebidas.html"><img src="img/soda-icon(v2).png" title="Portada" alt="Bebidas" width="250" height="250"></a>
-			</div>
-		</div>
+	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div><br>
 		
-		<div class="row">
-			<div class="col-5">
-				<a href="snacks.html"><img src="img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
-			</div>
-			<div class="col-5">
-				<img src="img/ramen-icon(v2).png" alt="ramen" width="250" height="250">
-			</div>
-		</div>
+	<!--Contenido principal de la pagina-->
+	<main>
 
+	<div class="container">		
+		<div class="row">
+			<div class="col-sm-12">
+				<h4>¿Estas seguro que desear eliminar tú cuenta?</h4>
+			</div>
+			<div class="col-sm-12">
+				<p>Ingresa tus datos para confirmar tu petición:</p>
+			</div>
+		</div><br>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<form action="php/eliminar.php" method="post">
+				<!--Correo-->
+				<div class="form-group">
+					<label for="email"><h5>Correo:</h5></label>
+					<input type="email" class="form-control" name="correo" placeholder="correo@mail.com" required>
+				</div>
+				<div class="form-group">
+					<label for="contraseña"><h5>Contraseña</h5></label>
+					<input type="password" class="form-control" name="contrasena" placeholder="Password" required>
+				</div>
+				<button type="submit" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Enviar</button>
+				</form>
+			</div>
+			<div class="col-sm-2"></div>
+		</div><br><br>
+	</div>
 	</main>
 	
 	<footer>		
