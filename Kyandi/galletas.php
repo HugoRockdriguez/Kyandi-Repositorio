@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bebidas キャンディー</title>
+	<title>Galletas キャンディー</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
@@ -40,34 +40,20 @@
 	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div>
 
 	<!--Contenido principal de la pagina-->
-	<main class="offer">
-		<div class="row">
-			<div class="col-3" style="display:block">
-				<a href="Fanta-Naranja.html">
-				<img src="img/productos/005-Fanta.jpg" alt="Fanta de Naranja" width="190" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Fanta Japonesa Premium de Naranja 380 ml.<br>$100.00</p></a>
-			</div>
-			
-			<div class="col-3" style="display:block">
-				<a href="#">
-				<img src="img/productos/006-Fanta.jpg" alt="Fanta de Uva" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Fanta Japonesa Premium de Uva Recién Exprimida 380 ml.<br>$100.00</p></a>
-			</div>
-			
-			<div class="col-3" style="display:block">
-				<a href="#">
-				<img src="img/productos/007-Chups.jpg" alt="Fanta de Melón" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Refresco Sabor Chupa Chups Melon Cream 250 ml.<br>$100.00</p></a>
-			</div>
-			
-			<div class="col-3" style="display:block">
-				<a href="#">
-				<img src="img/productos/008-Chups.jpg" alt="Pocky Choco Banana" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Refresco Coreano Sabor Chupa Chups Nata y Fresas 250 ml.<br>$100.00</p></a>
-			</div>
-		</div>
-		
-	</main>
+<?php	
+include('./php/conexioncarrito.php');
+$resultado= $conexion -> query("select * from productos where id_categoria=1") or die($conexion -> error);
+while($fila = mysqli_fetch_array($resultado)){
+?>
+<div class="row">
+<div class="col-3" style="display:block">
+<a href="Pocky-ChocoBanana.php?id=<?php echo $fila['id']?>">	
+<div align="center"><img src="img/productos/<?php echo $fila['imagen'];?>" alt="" width="180" height="250"></div>
+<p style="font-size: 20px; text-align: center; color: black;"><br><?php echo $fila['nombre']; ?><br>$<?php echo $fila ['precio']?></p></a>
+</div>
+</div>
+
+<?php } ?>
 	
 	<footer>		
 		<!--Pie de pagina 1-->

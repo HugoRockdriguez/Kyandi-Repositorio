@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Galletas キャンディー</title>
+	<title>Bebidas キャンディー</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-</head>
+</head>	
 
 <body>
 	<!--Encabezado: Titulo y logotipos-->
@@ -40,36 +40,22 @@
 	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div>
 
 	<!--Contenido principal de la pagina-->
-	<main class="offer">
-		<div class="row">
-			<div class="col-3" style="display:block">
-				<a href="Pocky-ChocoBanana.html">
-				<img src="img/productos/001-Pocky.png" alt="Pocky Choco Banana" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Pocky Choco Banana Parfait 70 gr.<br>$120.00</p></a>
-			</div>
-			
-			<div class="col-3" style="display:block">
-				<a href="#">
-				<img src="img/productos/002-Pocky.jpg" alt="Pocky Cacao Intenso" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Pocky Chocolate Cacao Intenso 62 grs.<br>$120.00</p></a>
-			</div>
-			
-			<div class="col-3" style="display:block">
-				<a href="#">
-				<img src="img/productos/003-Pocky.png" alt="Pocky con Almendra" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Pocky Chocolate con Almendras 38 grs.<br>$120.00</p></a>
-			</div>
-			
-			<div class="col-3" style="display:block">
-				<a href="#">
-				<img src="img/productos/004-Pocky.jpg" alt="Pocky Choco Banana" width="180" height="250">
-				<p style="font-size: 20px; text-align: center; color: black;"><br>Pocky Té Verde Matcha 70 grs.<br>$120.00</p></a>
-			</div>
-		</div>
-		
-	</main>
-	
-	<footer>		
+<?php	
+include('./php/conexioncarrito.php');
+$resultado= $conexion -> query("select * from productos where id_categoria=2") or die($conexion -> error);
+while($fila = mysqli_fetch_array($resultado)){
+?>
+<div class="row">
+<div class="col-3" style="display:block">
+<a href="Pocky-ChocoBanana.php?id=<?php echo $fila['id'];?>">	
+<div align="center"><img src="img/productos/<?php echo $fila['imagen'];?>" alt="" width="180" height="250"></div>
+<p style="font-size: 20px; text-align: center; color: black;"><br><?php echo $fila['nombre']; ?><br>$<?php echo $fila ['precio']?></p></a>
+</div>
+</div>
+
+<?php } ?>
+
+<footer>		
 		<!--Pie de pagina 1-->
 	<div class="footer1">
 	<div class="row">
