@@ -14,7 +14,6 @@ while($fila = mysqli_fetch_array($resultado)){
 <p style="font-size: 20px; text-align: center; color: black;"><br><?php echo $fila['nombre']; ?><br>$<?php echo $fila ['precio']?></p></a>
 </div>
 </div>
-
 <?php } ?>
 	
 <?php

@@ -24,7 +24,9 @@
 			</div>
 			<div class="col-4">
 				<a href="perfil.php"><img src="img/user.png" alt="Logo 2" class="float-right" style="padding-top: 22px;" title="Mi perfil"></a>
-				<a href="perfil.php"><img src="img/carrito.png" alt="" class="float-right" style="padding-top: 22px;" title="carrito"></a>
+				<span>
+				<a href="perfil.php"><img src="img/carrito.png" alt="" class="float-right" style="padding-top: 22px;" title="carrito"> </a>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -34,7 +36,7 @@
 	<nav class="navigation">
 		<ul>
 			<li><a href="index.php">Inicio</a></li>
-			<li><a href="novedades.html">Novedades</a></li>
+			<li><a href="novedades.php">Novedades</a></li>
 			<li><a href="#">Ofertas</a></li>
 		</ul>
 	</nav>
