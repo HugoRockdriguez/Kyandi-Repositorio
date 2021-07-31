@@ -39,7 +39,9 @@
 				<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="Q3TK4QLNU5BCW">
+				
 				<a href="carrito.php?id=<?php echo $fila[0]?>"><img src="img/carrito(v2).png" alt="" width="100" height="100"></a>
+				
 				<br><b>¡Añadir al carrito!</b>
 				</form><br>
 				<b>Ingredientes:</b><p style="text-align: justify"><?php echo $fila[3];?><!-- introduccion dinamica de los ingredientes-->
