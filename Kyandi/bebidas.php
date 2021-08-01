@@ -1,5 +1,5 @@
 <?php
-    require './php/cabecero.php'
+     require("./php/cabecero.php");
   ?>
 	<!--Contenido principal de la pagina-->
 <div class="row">
@@ -17,5 +17,5 @@ while($fila = mysqli_fetch_array($resultado)){
 <?php } ?>
 </div>
 <?php
-    require './php/footer.php'
+     require("./php/footer.php");
   ?>

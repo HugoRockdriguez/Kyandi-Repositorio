@@ -96,7 +96,7 @@ if (isset($_SESSION['carrito'])) {//comprueba que no exista la variable session
   	 ?>
                   <tr>
                     <td class="product-thumbnail">
-                      <img src="img/productos/<?php echo $arreglocarrito[$i]['imagen'];?>" alt="Image"  width="100" height="100" class="img-fluid">
+                      <img src="./img/productos/<?php echo $arreglocarrito[$i]['imagen'];?>" alt="Image"  width="100" height="100" class="img-fluid">
                     </td><!-- agrega imagen a la tabla del carrito -->
                     <td class="product-name">
                       <h2 class="h6 text-black"><?php echo $arreglocarrito[$i]['nombre'];?></h2>
