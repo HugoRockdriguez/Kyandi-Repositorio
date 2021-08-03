@@ -8,13 +8,13 @@ require("./php/cabecero2.php");
 				<a href="insertarproductos.php"><img src="img/interfaz/agregarpdt.png" alt="Galletas" width="250" height="250"><h2 align="center">Agregar Productos</h2></a>
 			</div>
 			<div class="col-5">
-				<a href="galletas.php"><img src="img/interfaz/actualizar.png" alt="Galletas" width="250" height="250"><h2 align="center">Actualizar Productos</h2></a>
+				<a href="actualizarproducto.php"><img src="img/interfaz/actualizar.png" alt="Galletas" width="250" height="250"><h2 align="center">Actualizar Productos</h2></a>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-5">
-				<a href="galletas.php"><img src="img/interfaz/delete.png" alt="Galletas" width="250" height="250"><h2 align="center">Eliminar Productos</h2></a>
+				<a href="eliminarproductos.php"><img src="img/interfaz/delete.png" alt="Galletas" width="250" height="250"><h2 align="center">Eliminar Productos</h2></a>
 			</div>
 			<div class="col-5">
 				<a href="galletas.php"><img src="img/interfaz/usuario.png" alt="Galletas" width="250" height="250"><h2 align="center">Agregar Usuario</h2></a>

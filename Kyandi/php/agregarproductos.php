@@ -45,7 +45,7 @@ echo("
 else{
  echo("
     <script>
-      alert('Erro al agregar el producto'.$var);
+      alert('Error al agregar el producto'.$var);
       location.href='../insertarproductos.php';
     </script>
 	"); 	
@@ -53,6 +53,59 @@ else{
 }// if ($_GET['id']==1)
 
 
+if ($_GET['id']==2) { //atravez del metodo get identificamos el valor del id para ejecutar la funcion correcta 
+$codbar=$_POST['id'];
+$sql="";
+
+if ($imagen=="") {
+$sql="UPDATE `productos` SET `nombre`='$nombre',`descripcion`='$descripcion',`ingredientes`='$ingredientes',`inf_nutricional`='$info',`caducidad`='$caducidad',`precio`='$precio',`inventario`='$inventario',`id_categoria`='$idcategoria',`cantidad`='$cantidad',`sabor`='$sabor' WHERE id=$codbar";
+}else{
+	$sql="UPDATE `productos` SET `nombre`='$nombre',`descripcion`='$descripcion',`ingredientes`='$ingredientes',`inf_nutricional`='$info',`caducidad`='$caducidad',`precio`='$precio',`imagen`='$imagen',`inventario`='$inventario',`id_categoria`='$idcategoria',`cantidad`='$cantidad',`sabor`='$sabor' WHERE id=$codbar";
+}
+
+$var=$crud->actulizar($sql);//$nombre,$caducidad,$precio,$info,$descripcion,$ingredientes,$inventario,$sabor,$idcategoria,$cantidad,$codbar
+
+if($var==1){
+echo("
+    <script>
+      alert('Producto Actualizado Correctamente');
+      location.href='../actualizarproducto.php';
+    </script>
+	");
+}
+else{
+ echo("
+    <script>
+      alert('Error al actualizar el producto'.$var);
+      location.href='../actualizarproducto.php';
+    </script>
+	"); 	
+}
+}// if ($_GET['id']==2)
+
+
+if ($_GET['id']==3) { //atravez del metodo get identificamos el valor del id para ejecutar la funcion correcta 
+$codbar=$_POST['id'];
+$sql="DELETE FROM `productos` WHERE id='$codbar'";
+$var=$crud->eliminar($sql);//$nombre,$caducidad,$precio,$info,$descripcion,$ingredientes,$inventario,$sabor,$idcategoria,$cantidad,$codbar
+
+if($var==1){
+echo("
+    <script>
+      alert('Producto ERliminado Correctamente');
+      location.href='../actualizarproducto.php';
+    </script>
+	");
+}
+else{
+ echo("
+    <script>
+      alert('Error al actualizar el producto'.$var);
+      location.href='../actualizarproducto.php';
+    </script>
+	"); 	
+}
+}// if ($_GET['id']==2)
 
 
 ?>

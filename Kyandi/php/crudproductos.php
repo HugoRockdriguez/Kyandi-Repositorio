@@ -12,5 +12,17 @@ class crudproductos{
 	return $insertar;
 }
 
+    public function actulizar($sql){
+    // $nombre,$caducidad,$precio,$info,$descripcion,$ingredientes,$inventario,$sabor,$idcategoria,$cantidad,$codbar
+    global $conexion;
+    $insertar= $conexion -> query($sql)or die($conexion  -> error);
+    return $insertar;
+}
+    public function eliminar($sql){
+    // $nombre,$caducidad,$precio,$info,$descripcion,$ingredientes,$inventario,$sabor,$idcategoria,$cantidad,$codbar
+    global $conexion;
+    $insertar= $conexion -> query($sql)or die($conexion  -> error);
+    return $insertar;
+}
 }
 ?>
