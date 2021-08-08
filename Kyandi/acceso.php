@@ -1,5 +1,5 @@
 <?php
-require './php/cabecero.php'
+ require("./php/cabecero.php");
 ?>
 
 	<!--Contenido principal de la pagina-->
@@ -60,5 +60,5 @@ require './php/cabecero.php'
 	</main>
 		
 <?php
-require './php/footer.php'
+ require("./php/footer.php");
 ?>

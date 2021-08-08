@@ -23,19 +23,19 @@
 	<main class="offer">
 		<div class="row">
 			<div class="col-5">
-				<a href="galletas.php"><img src="img/galleta_icon(v2).png" alt="Galletas" width="250" height="250"></a>
+				<a href="galletas.php"><img src="./img/galleta_icon(v2).png" alt="Galletas" width="250" height="250"></a>
 			</div>
 			<div class="col-5">
-				<a href="bebidas.php"><img src="img/soda-icon(v2).png" title="Portada" alt="Bebidas" width="250" height="250"></a>
+				<a href="bebidas.php"><img src="./img/soda-icon(v2).png" title="Portada" alt="Bebidas" width="250" height="250"></a>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-5">
-				<a href="snacks.html"><img src="img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
+				<a href="snacks.html"><img src="./img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
 			</div>
 			<div class="col-5">
-				<img src="img/ramen-icon(v2).png" alt="ramen" width="250" height="250">
+				<img src="./img/ramen-icon(v2).png" alt="ramen" width="250" height="250">
 			</div>
 		</div>
 

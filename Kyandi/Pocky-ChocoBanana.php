@@ -6,7 +6,7 @@
  	if (mysqli_num_rows($resultado)>0) { // verifica que al ingresar a la base de datos exista por lo menos una fila de productos 
  		$fila= mysqli_fetch_row($resultado); // convierte a la fila obtenida en un arreglo 
  	}else{ 
- 		header("Location: ./index.html");
+ 		header("Location: ./index.php");
  	}
  }
  else{
@@ -22,7 +22,7 @@
 	<main class="offer">
 		<div class="row">
 			<div class="col-6" style="display:block;">
-				<img src="img/productos/<?php echo $fila[7];?>"  width="350" height="500" style="margin-left: 25px;"><!-- arreglo que agrega la imagen desde la base de datos-->
+				<img src="./img/productos/<?php echo $fila[7];?>"  width="350" height="500" style="margin-left: 25px;"><!-- arreglo que agrega la imagen desde la base de datos-->
 				<p style="font-size: 25px; text-align: justify;"><br><?php echo $fila[2];?><!-- itroduccion dinamica de la descripcion del producto-->
 				</p><br>
 				
@@ -40,7 +40,7 @@
 				<input type="hidden" name="cmd" value="_s-xclick">
 				<input type="hidden" name="hosted_button_id" value="Q3TK4QLNU5BCW">
 				
-				<a href="carrito.php?id=<?php echo $fila[0]?>"><img src="img/carrito(v2).png" alt="" width="100" height="100"></a>
+				<a href="./carrito.php?id=<?php echo $fila[0]?>"><img src="./img/carrito(v2).png" alt="" width="100" height="100"></a>
 				
 				<br><b>¡Añadir al carrito!</b>
 				</form><br>
@@ -49,7 +49,7 @@
 				<b>Información nutricional:</b><p style="text-align: justify"><?php echo $fila[4];?>
 				</p><br>
 				<b>Tambien te podría interesar:</b>
-				<img src="img/snoop.png" height="200" width="400">
+				<img src="./img/snoop.png" height="200" width="400">
 				
 			</div>
 		</div>
