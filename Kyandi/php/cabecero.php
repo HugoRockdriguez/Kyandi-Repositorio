@@ -6,10 +6,10 @@
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
 	<meta name="robot" content="index,follow"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
 			<div class="col-4">
 				<a href="perfil.php"><img src="img/user.png" alt="Logo 2" class="float-right" style="padding-top: 22px;" title="Mi perfil"></a>
 				<span>
-				<a href="perfil.php"><img src="img/carrito.png" alt="" class="float-right" style="padding-top: 22px;" title="carrito"> </a>
+				<a href="carrito.php"><img src="img/carrito.png" alt="" class="float-right" style="padding-top: 22px;" title="carrito"> </a>
 				</span>
 			</div>
 		</div>

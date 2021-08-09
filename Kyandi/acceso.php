@@ -29,7 +29,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<a href="form.html"><button class="btn btn-primary" style="background: #d68189; border-color: #d68189;">Registrarse</button></a>
+				<a href="form.php"><button class="btn btn-primary" style="background: #d68189; border-color: #d68189;">Registrarse</button></a>
 			</div>
 		</div><br>
 		

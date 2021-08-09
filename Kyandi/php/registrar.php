@@ -1,5 +1,5 @@
 <?php
-	include("conexion.php");
+	include("conexioncarrito.php");
 
 	//Recuperar datos del formulario
 	$nombre=$_POST['nombre'];
@@ -23,7 +23,7 @@
 	if(mysqli_num_rows($verificar_correo)>0){
 		echo'<script> 
 				alert("El correo ya se encuantra registrado.");
-				window.location="../form.html";
+				window.location="../form.php";
 			</script>';
 	}else{
 	//Enviar los datos del formulario a la BD

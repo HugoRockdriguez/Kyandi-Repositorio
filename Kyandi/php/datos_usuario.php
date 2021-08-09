@@ -1,5 +1,5 @@
 <?php
-	include("php/conexion.php");
+	include("conexioncarrito.php");
 	$sesion_actual=$_SESSION['usuario'];
 	$consulta="Select * From usuario WHERE correo='$sesion_actual'";
 	$datos=mysqli_query($conexion,$consulta);

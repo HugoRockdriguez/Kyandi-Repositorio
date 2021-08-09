@@ -1,5 +1,5 @@
 <?php
-	include('conexion.php');
+	include('conexioncarrito.php');
 	$correo=$_POST['correo'];
 	$contrasena=$_POST['contrasena'];
 	$contrasena=hash('sha512',$contrasena);
@@ -20,3 +20,12 @@
 		</script>';
 	}
 ?>
+
+<!-- unset en php --> 
+<!-- unset($_SESSION['carrito']);
+ -->
+
+
+<!--  https://www.php.net/manual/en/function.unset.php -->
+<!-- https://www.php.net/manual/es/index.php
+ -->

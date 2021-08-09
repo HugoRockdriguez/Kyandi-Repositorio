@@ -4,7 +4,7 @@
 
 	//verificar la conexión
 	if ($conexion){
-		$base_datos=mysql_select_db('kyandi-bd');
+		$base_datos=mysql_select_db('carrito');
 	}else{
 		echo "No se pudo conectar con el servidor.";
 	}
