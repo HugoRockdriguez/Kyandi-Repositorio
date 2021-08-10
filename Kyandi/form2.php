@@ -1,5 +1,5 @@
 <?php
-require './php/cabecero.php'
+require './php/cabecero2.php'
 ?>
 	<!--Contenido principal de la pagina-->
 	<main>
@@ -67,7 +67,7 @@ require './php/cabecero.php'
 					<input type="password" class="form-control" name="contrasena" placeholder="Password" required>
 				</div>
 				<div class="form-group">
-					<input id="tipo" name="tipo" type="hidden" value="0">
+					<input id="tipo" name="tipo" type="hidden" value="1">
 				</div>
 				<button type="submit" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Enviar</button>
 			</form>

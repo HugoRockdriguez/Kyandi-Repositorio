@@ -3,6 +3,6 @@
 	session_destroy();
 	echo'<script>
 		alert("¡Hasta pronto!");
-		window.location="../index.html";
+		window.location="../index.php";
 	</script>';
 ?>

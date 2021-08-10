@@ -4,6 +4,15 @@ $res=0;
 ?>
 <!-- contenido principal de la pagina -->
 <!--Contenido principal de la pagina-->
+<br>
+<div class="col" style=" position: relative; height: 30px; border-color: white; background-color: white;">
+<h6>Busqueda Avanzada: <h6>
+<input class="buscar"type="text" name="busqueda">
+<button type="submit">Buscar</button>
+</div>
+<br>
+<br>
+
 <div class="row">
 <?php
 include('./php/conexioncarrito.php');
@@ -22,3 +31,9 @@ while($fila = mysqli_fetch_array($resultado)){
 <?php
 require("./php/footer.php");
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- se incluye la libreria de jquery -->
+<script >
+	$(document)
+
+</script>

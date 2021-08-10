@@ -13,16 +13,20 @@ class crudproductos{
 }
 
     public function actulizar($sql){
-    // $nombre,$caducidad,$precio,$info,$descripcion,$ingredientes,$inventario,$sabor,$idcategoria,$cantidad,$codbar
     global $conexion;
     $insertar= $conexion -> query($sql)or die($conexion  -> error);
     return $insertar;
 }
     public function eliminar($sql){
-    // $nombre,$caducidad,$precio,$info,$descripcion,$ingredientes,$inventario,$sabor,$idcategoria,$cantidad,$codbar
     global $conexion;
     $insertar= $conexion -> query($sql)or die($conexion  -> error);
     return $insertar;
 }
+//    public function buscar($buscar){
+//     $sql="SELECT * FROM `productos` WHERE 'id'LIKE %'.$buscar.'% OR nombre LIKE %'.$buscar.'%"
+//    global $conexion;
+//     $insertar= $conexion -> query($sql)or die($conexion  -> error);
+//     return $insertar;
+// }
 }
 ?>

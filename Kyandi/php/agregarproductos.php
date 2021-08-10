@@ -16,7 +16,6 @@ $imagen=$_FILES['imagen']['name'];//se obtiene el nombre de la imagen
 $ruta=$_FILES["imagen"]["tmp_name"];//se obtiene el directorio de donde se esta tomando la imagen
 $destino="../img/productos/".$imagen;//atrves de la variable destino agregamos la ruta a la cual queremos copiar la imagen seleccionada
 move_uploaded_file($ruta,$destino);//atrves de esta funcion copiamos la imagen selccionada desde la ruta  original hasta la ruta donde se va a guardar nuestra imagen 
-
 switch ($categoria) {//este switch asigna un valor numerico a la categoria y lo recepciona la variable idcategoria
 	case 'Galletas':
 		$idcategoria=1;
@@ -92,7 +91,7 @@ $var=$crud->eliminar($sql);//$nombre,$caducidad,$precio,$info,$descripcion,$ingr
 if($var==1){
 echo("
     <script>
-      alert('Producto ERliminado Correctamente');
+      alert('Producto Eliminado Correctamente');
       location.href='../actualizarproducto.php';
     </script>
 	");
@@ -105,7 +104,7 @@ else{
     </script>
 	"); 	
 }
-}// if ($_GET['id']==2)
+}// if ($_GET['id']==3)
 
 
 ?>

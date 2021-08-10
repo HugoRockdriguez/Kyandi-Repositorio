@@ -74,7 +74,9 @@ if (isset($_SESSION['carrito'])) {//comprueba que no exista la variable session
     require './php/cabecero.php'
   ?>
 
-
+<?php
+if (!empty($_SESSION['carrito'])) {
+?>
 
   <table class="table table-bordered"> <!--se crea la tabla donde se iran acomodando los productos-->
                 <thead>
@@ -89,8 +91,9 @@ if (isset($_SESSION['carrito'])) {//comprueba que no exista la variable session
                 </thead>
                 <tbody>
   <?php
-  if (isset($_SESSION['carrito'])) { //comprueba que la dfuncion session exista
+ 
   	$arreglocarrito=$_SESSION['carrito'];
+  	$suma=0;
   	for ($i=0; $i <count($arreglocarrito) ; $i++) { // count es el equivalente de .lenght, este for ira creando la tabla para ir agregando productos
   		// code...
   	 ?>
@@ -116,21 +119,57 @@ if (isset($_SESSION['carrito'])) {//comprueba que no exista la variable session
                     </td>
                     <td class="cant<?php echo $arreglocarrito[$i]['id'];?>">
                     <?php
-                    if ($arreglocarrito[$i]['cantidad']=="") {
+                    if ($arreglocarrito[$i]['cantidad']=="") {// en este ciclo establecemos que cuando el campo este vacio tome el valor de 1
                      	$arreglocarrito[$i]['cantidad']=1;
                      	echo $arreglocarrito[$i]['precio']*$arreglocarrito[$i]['cantidad'];
+                  
                      } else{
-                    echo $arreglocarrito[$i]['precio']*$arreglocarrito[$i]['cantidad'];
+                    echo "$".$arreglocarrito[$i]['precio']*$arreglocarrito[$i]['cantidad'];
                     }	
                     ?> 	
                     </td>
                     <td><a href="#" class="btn btn-primary btn-sm btnEliminar" data-id="<?php echo $arreglocarrito[$i]['id']?>">Eliminar</a></td><!--el boton de elminar se le agrega el atributo id para identificarlo al momento de hacer uso de ello-->
+                    
                   </tr>
-    <?php }} ?>              
-              </tbody>
-          </table>
 
+    <?php 
+  $suma=$suma+$arreglocarrito[$i]['precio']*$arreglocarrito[$i]['cantidad'];// se crea la variable suma 
 
+} ?> <!--  termina la condicional if y el ciclo for -->
+
+             </tbody>
+             
+<tfoot>
+ 
+        <tr>
+          <td colspan="4" align="right">Subtotal </td>	
+          <td colspan="2">$<?php echo $suma-$suma*.16?></td>
+        </tr>
+        <tr>
+          <td colspan="4" align="right">Iva: </td>	
+          <td colspan="2">$<?php echo $suma*.16?></td>
+        </tr>
+         <tr>
+          <td colspan="4" align="right">Costo de envio </td>	
+          <td colspan="2">$<?php echo 100?></td>
+        </tr>
+        <tr>
+          <td colspan="4" align="right">Total a Pagar </td>	
+          <td colspan="2">$<?php echo $suma+100?></td>
+        </tr>
+  
+</tfoot>
+</table>
+
+<button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='pago.php'">Proceder al pago</button>
+
+<?php } //cierra el if que coprueba que existan datos en el carrito
+else{
+?>
+<div class="alert alert-success" align="center">
+ No hay productos en el carrito! <!-- en caso de que no existan productos en el carrito muestra este mensaje  -->
+<?php } ?>
+</div>
 <?php
     require './php/footer.php'
 ?>
@@ -151,6 +190,7 @@ if (isset($_SESSION['carrito'])) {//comprueba que no exista la variable session
     	}
     }).done(function(respuesta){//se recibe el valor retornado por la funcion eliminarcarrito.php
     	boton.parent('td').parent('tr').remove();//se eliminan las celdas del producto eliminado 
+    	parent.window.location.reload(true);//recarga la pagina
       //alert(respuesta);//se imprime el valor retornado por la funcion eliminarcarrito.php
     });
 	});
@@ -172,6 +212,7 @@ if (isset($_SESSION['carrito'])) {//comprueba que no exista la variable session
 		       if (respuesta=="") {//comprueba que el mensaje enviado no este en blanco
 		       var multipicacion=parseFloat(cantidad)* parseFloat(precio);// se multiplica cantidad por precio para determinar el total
 		       $(".cant"+id).text(multipicacion);//a la clase "cant" que tenga el valor "id" se le agregara el texto resultado de la multipliaccion 
+		       setTimeout('document.location.reload()',1000);//actualiza la pagina despues de pasado 1 seg
 		     }
 		     else{//si el mensaje recibido no esta en blanco quire decir que la cantidad solicitada es mayor a la existencia en inventario
 		     	 alert(respuesta);//muestra el mensaje enviado por la funcion actualizarcarrito.php
