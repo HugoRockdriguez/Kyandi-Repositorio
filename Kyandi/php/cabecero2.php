@@ -31,7 +31,10 @@
 
 	<!--Barra de navegación-->
 	<nav class="navigation">
-		<h1 align="center">Panel de Administracion</h1>
+		<ul>
+			<li><a href="vistaadmin.php">Inicio</a></li>
+			<li><a href="vistapedidos.php">Pedidos</a></li>
+		</ul>
 	</nav>
 	<div class="col" style=" position: relative; height: 3px; border-color: #c5930a; background-color: #e94e77"></div>
 </body>

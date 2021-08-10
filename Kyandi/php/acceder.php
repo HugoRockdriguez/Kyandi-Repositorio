@@ -10,13 +10,19 @@
 	$sql_validar=mysqli_query($conexion,"SELECT * FROM usuario WHERE correo='$correo' AND contrasena='$contrasena'");
 
 	if(mysqli_num_rows($sql_validar)>0){
+		$fila = mysqli_fetch_array($sql_validar);
 		$_SESSION['usuario']=$correo;
+		if($fila[12]==0){
 		header("location: ../perfil.php");
+		}else{
+			header("location: ../vistaadmin.php");
+
+		}
 	}else{
 		session_destroy();
 		echo'<script>
 			alert("Los datos no coinciden, verifica tú correo y contraseña o resgistrate si aun no lo haz hecho.")
-			window.location="../acceso.html";
+			window.location="../acceso.php";
 		</script>';
 	}
 ?>

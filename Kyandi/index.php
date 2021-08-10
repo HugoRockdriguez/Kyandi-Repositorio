@@ -32,10 +32,10 @@
 		
 		<div class="row">
 			<div class="col-5">
-				<a href="snacks.html"><img src="./img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
+				<a href="snacks.php"><img src="./img/snack-icon.png" alt="Snacks" width="250" height="250"></a>
 			</div>
 			<div class="col-5">
-				<img src="./img/ramen-icon(v2).png" alt="ramen" width="250" height="250">
+				<a href="ramen.php"><img src="./img/ramen-icon(v2).png" alt="ramen" width="250" height="250"></a>
 			</div>
 		</div>
 
