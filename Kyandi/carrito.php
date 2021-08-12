@@ -161,7 +161,7 @@ if (!empty($_SESSION['carrito'])) {
 </tfoot>
 </table>
 
-<button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='pago.php'">Proceder al pago</button>
+<button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='pago.php?cant=<?php echo $suma+100?>'">Proceder al pago</button>
 
 <?php } //cierra el if que coprueba que existan datos en el carrito
 else{

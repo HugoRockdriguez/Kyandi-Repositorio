@@ -42,6 +42,7 @@ require './php/cabecero.php'
 				
 				<a href="editar_perfil.php"><button type="button" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Editar Datos</button></a>
 				<a href="php/cerrar_sesion.php"><button type="button" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Cerrar Sesión</button></a>
+				<a href="pedidoscliente.php"><button type="button" class="btn btn-primary" style="background: #d68189; border-color: #d68189">Pedidos</button></a>
 			</div>
 
 		</div>

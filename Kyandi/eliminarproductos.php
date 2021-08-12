@@ -4,6 +4,15 @@ require("./php/cabecero2.php");
 
 <!-- contenido principal de la pagina -->
 <!--Contenido principal de la pagina-->
+<div class="col" style=" position: relative; height: 30px; border-color: white; background-color: white;">
+<h6>Busqueda Avanzada: <h6>
+<form action="./busqueda.php" method="get">
+<input type="text" name="busqueda">
+<button type="submit">Buscar</button>
+</form>
+</div>
+<br>
+<br>
 <div class="row">
 <?php
 include('./php/conexioncarrito.php');

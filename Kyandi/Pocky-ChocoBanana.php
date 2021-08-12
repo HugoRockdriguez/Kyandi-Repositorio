@@ -1,3 +1,5 @@
+
+
 <!--funcion que permite atraves del metodo get colocar un id a cada producto de la base de datos dando dinamismo a la pagina -->
 <?php
  include("./php/conexioncarrito.php");

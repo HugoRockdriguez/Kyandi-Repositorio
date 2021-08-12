@@ -6,7 +6,7 @@ require("./php/cabecero2.php");
 <br>
 <div class="col" style=" position: relative; height: 30px; border-color: white; background-color: white;">
 <h6>Busqueda Avanzada: <h6>
-<form action="./busqueda.php" method="get">
+<form action="busqueda.php" method="get">
 <input type="text" name="busqueda">
 <button type="submit">Buscar</button>
 </form>
@@ -17,7 +17,9 @@ require("./php/cabecero2.php");
 <div class="row">
 <?php
 include('./php/conexioncarrito.php');
-$resultado= $conexion -> query("select * from productos") or die($conexion -> error);
+$res=$_GET['busqueda'];
+$resultado= $conexion -> query("select * from productos where id='$res' or nombre like '%".$_GET['busqueda']."%' ") or die($conexion -> error);
+// "select * from productos where nombre like '%".$_GET['busqueda']."%'"
 while($fila = mysqli_fetch_array($resultado)){
 ?>
 

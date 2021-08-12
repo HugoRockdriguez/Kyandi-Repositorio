@@ -10,6 +10,7 @@
                     <th class="product-price">fecha</th>
                     <th class="product-quantity">Correo</th>
                     <th class="product-total">Total</th>
+                    <th class="product-status">Status Paypal</th>
                     <th class="product-remove">Status</th>
                   </tr>
                 </thead>
@@ -19,6 +20,13 @@
 include('./php/conexioncarrito.php');
 $resultado= $conexion -> query("select * from ventas") or die($conexion -> error);
 while($fila = mysqli_fetch_array($resultado)){
+$status;
+$var=$fila['paypal'];
+if($var!=""){
+$status="Aprobado";
+}else{
+$status="Pendiente";  
+}
 ?>
  <tr>
     <td class="product-thumbnail">
@@ -35,6 +43,9 @@ while($fila = mysqli_fetch_array($resultado)){
     </td>
     <td class="product-total">
     <?php echo $fila['total'];?>
+    </td>
+    <td class="product-status">
+    <?php echo $status;?>
     </td>
     <td class="product-remove">
     <a href="#" class="btn btn-primary btn-sm btnActualizar" data-id="<?php echo $fila['id']?>"><?php echo $fila['status'];?></a>

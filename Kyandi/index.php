@@ -9,11 +9,11 @@
 	    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
   </ol>
 	  <div class="carousel-inner" role="listbox">
-	    <div class="carousel-item active"> <a href="#"><img src="img/fanta.png" alt="First slide" width="700" height="300" class="d-block mx-auto"></a>
+	    <div class="carousel-item active"> <a href="Pocky-ChocoBanana.php?id=35"><img src="img/fanta.png" alt="First slide" width="700" height="300" class="d-block mx-auto"></a>
         </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/poke.jpg" alt="Second slide" width="700" height="300" class="d-block mx-auto"></a>
+	    <div class="carousel-item"> <a href="Pocky-ChocoBanana.php?id=36"><img src="img/poke.jpg" alt="Second slide" width="700" height="300" class="d-block mx-auto"></a>
         </div>
-	    <div class="carousel-item"> <a href="#"><img src="img/pocky.png" alt="Third slide" width="700" height="300" class="d-block mx-auto"></a>
+	    <div class="carousel-item"> <a href="Pocky-ChocoBanana.php?id=14"><img src="img/pocky.png" alt="Third slide" width="700" height="300" class="d-block mx-auto"></a>
         </div>
   </div>
 	  <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>

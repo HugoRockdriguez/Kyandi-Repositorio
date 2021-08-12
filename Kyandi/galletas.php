@@ -1,10 +1,15 @@
+
 <?php
     require './php/cabecero.php'
+  
+
   ?>
+
+
 	<!--Contenido principal de la pagina-->
 <br>
 <div class="row">
-<?php	
+<?php
 include('./php/conexioncarrito.php');
 $resultado= $conexion -> query("select * from productos where id_categoria=1 and inventario>0") or die($conexion -> error);
 while($fila = mysqli_fetch_array($resultado)){

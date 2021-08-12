@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>キャンディー (Kyandī) :3</title>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
 	<meta name="robot" content="index,follow"/>

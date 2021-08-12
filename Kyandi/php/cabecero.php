@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>キャンディー (Kyandī) :3</title>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="Dulceria, Japon, Kawaii"/>
 	<meta name="keywords" content="Pocky, Kokeiya, Honkaku"/>
 	<meta name="robot" content="index,follow"/>
@@ -10,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
 </head>
 
 <body>

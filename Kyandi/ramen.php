@@ -1,3 +1,4 @@
+
 <?php
      require("./php/cabecero.php");
   ?>
